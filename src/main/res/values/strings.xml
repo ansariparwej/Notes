@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Todo Notes</string>
+    <string name="my_notes">My Notes</string>
+    <string name="search_Notes">Search Notes</string>
+    <string name="note_title">Note Title</string>
+    <string name="note_subtitle">Note Subtitle</string>
+    <string name="type_note_here">Type Note here...</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="add_url">Add Url</string>
+    <string name="enter_url">Enter URL</string>
+    <string name="add">ADD</string>
+    <string name="cancel">CANCEL</string>
+
+
+</resources>

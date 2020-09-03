@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activity.CreateNoteActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/_10sdp"
+        >
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+>
+<ImageView
+    android:layout_width="@dimen/_30sdp"
+    android:layout_height="@dimen/_30sdp"
+    android:id="@+id/imageBack"
+    android:layout_marginStart="@dimen/_6sdp"
+    android:layout_marginTop="@dimen/_20sdp"
+    android:layout_marginEnd="@dimen/_12sdp"
+    android:contentDescription="@string/app_name"
+    android:src="@drawable/ic_back"
+    android:tint="@color/colorIcons"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    ></ImageView>
+
+    <ImageView
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:id="@+id/imageSave"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@drawable/background_done_button"
+        android:src="@drawable/ic_done"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_4sdp"
+        android:tint="@color/colorIcons"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageBack"
+        ></ImageView>
+
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:id="@+id/inputNoteFile"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@null"
+        android:fontFamily="@font/ubuntu_bold"
+        android:hint="@string/note_title"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="text"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorTextHint"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintTop_toBottomOf="@id/imageBack"
+        ></EditText>
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDateTime"
+        android:fontFamily="@font/ubuntu_regular"
+        android:includeFontPadding="false"
+        android:textColor="@color/colorIcons"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintEnd_toEndOf="@id/inputNoteFile"
+        app:layout_constraintStart_toStartOf="@id/inputNoteFile"
+        app:layout_constraintTop_toBottomOf="@id/inputNoteFile"
+        ></TextView>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputNoteSubtitle"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:background="@null"
+        android:fontFamily="@font/ubuntu_medium"
+        android:hint="@string/note_subtitle"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:paddingBottom="@dimen/_8sdp"
+        android:paddingTop="@dimen/_8sdp"
+        android:textColor="@color/colorTextSubtitle"
+        android:textColorHint="@color/colorTextHint"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/viewSubtitleIndicator"
+        app:layout_constraintTop_toBottomOf="@id/textDateTime"
+
+        ></EditText>
+
+    <View
+        android:layout_width="@dimen/_15sdp"
+        android:layout_height="0dp"
+        android:id="@+id/viewSubtitleIndicator"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:background="@drawable/background_subtitle_indicator"
+        app:layout_constraintBottom_toBottomOf="@id/inputNoteSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/inputNoteSubtitle"
+        ></View>
+
+    <ImageView
+        android:id="@+id/imageNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/app_name"
+        android:visibility="gone"
+
+        app:layout_constraintTop_toBottomOf="@id/inputNoteSubtitle"
+        ></ImageView>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:id="@+id/imageRemoveImage"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:padding="@dimen/_4sdp"
+        android:contentDescription="@string/app_name"
+        android:tint="@color/colorWhite"
+        app:lottie_rawRes="@raw/trash"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/background_delete"
+        app:layout_constraintEnd_toEndOf="@id/imageNote"
+        app:layout_constraintTop_toTopOf="@id/imageNote"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutWebUrl"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/imageNote"
+        tools:ignore="MissingConstraints">
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/textWebUrl"
+    android:layout_weight="1"
+    android:autoLink="web"
+    android:fontFamily="@font/ubuntu_regular"
+    android:includeFontPadding="false"
+    android:textSize="@dimen/_13ssp"
+    />
+
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="@dimen/_50sdp"
+    android:layout_height="@dimen/_50sdp"
+    android:id="@+id/imageRemoveWebUrl"
+    android:contentDescription="@string/app_name"
+    android:tint="@color/colorDelete"
+    app:lottie_rawRes="@raw/trash"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"
+    />
+
+
+    </LinearLayout>
+    
+    
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputNote"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@null"
+        android:fontFamily="@font/ubuntu_regular"
+        android:gravity="top"
+        android:hint="@string/type_note_here"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_13ssp"
+        android:textColorHint="@color/colorTextHint"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="textMultiLine"
+        android:minHeight="@dimen/_100sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutWebUrl"
+        ></EditText>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <include layout="@layout/layout_miscellaneous"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
